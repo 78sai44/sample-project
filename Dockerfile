@@ -4,10 +4,13 @@ FROM python:3.9-slim
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Python script into the container
-COPY largest_number.py
+# Copy the Python script into the working directory
+COPY largest_number.py /app/
 
-# Expose the port the app runs on
+# Install Flask (required for the updated Python script)
+RUN pip install flask
+
+# Expose the port used by the Flask app
 EXPOSE 5000
 
 # Run the Python script when the container starts
