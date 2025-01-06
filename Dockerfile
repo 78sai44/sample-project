@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copy the Python script into the working directory
-COPY ./app/
+COPY . /app/
 
 # Install Flask (required for the updated Python script)
 RUN pip install -r requirement.txt
