@@ -5,10 +5,10 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copy the Python script into the working directory
-COPY largest_number.py /app/
+COPY ./app/
 
 # Install Flask (required for the updated Python script)
-RUN pip install flask
+RUN pip install -r requirement.txt
 
 # Expose the port used by the Flask app
 EXPOSE 5000
